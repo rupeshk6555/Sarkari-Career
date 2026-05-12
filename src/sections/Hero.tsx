@@ -2,7 +2,7 @@ import { Search } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative bg-navy pt-16 sm:pt-20 pb-8 sm:pb-10 overflow-hidden">
+    <section className="relative bg-navy pt-20 sm:pt-20 pb-8 sm:pb-10 overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-3 sm:px-4 md:px-6">
         {/* Search Bar */}
         <div className="flex items-center bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-2xl h-12 sm:h-14 px-1.5 sm:px-2 group hover:bg-white/15 transition-all duration-300 focus-within:bg-white/20 focus-within:border-white/40 focus-within:ring-4 focus-within:ring-brand/30 max-w-2xl mx-auto">
