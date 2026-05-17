@@ -7,7 +7,7 @@ import Link from "next/link";
 export function StateNavigation() {
   return (
     <section className="py-16 md:py-20 bg-linear-to-b from-white to-slate-50/80 relative overflow-hidden">
-      <div className="max-w-[1280px] mx-auto px-4 md:px-6 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-6 relative z-10">
         <SectionHeader
           label="BROWSE BY STATE"
           heading="Find Jobs in Your State"

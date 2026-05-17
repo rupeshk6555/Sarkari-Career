@@ -149,7 +149,7 @@ export function AgeCalculator() {
     <div className="min-h-screen bg-off-white pt-20 pb-16">
       {/* Modern Hero Section */}
       <div className="bg-white border-b border-slate-200">
-        <div className="max-w-[1280px] mx-auto px-4 md:px-6 py-12 md:py-20">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-6 py-12 md:py-20">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-10">
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 text-brand text-xs font-bold uppercase tracking-wider mb-6">
@@ -192,7 +192,7 @@ export function AgeCalculator() {
         </div>
       </div>
 
-      <div className="max-w-[1280px] mx-auto px-4 md:px-6 -mt-12 md:-mt-16 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-6 -mt-12 md:-mt-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Main Calculator Column */}
           <div className="lg:col-span-8 space-y-8">

@@ -10,7 +10,7 @@ export function ThreeColumnGrid() {
   return (
     <section id="admit-card" className="py-12 md:py-16 relative bg-slate-50/80 border-t border-slate-200/50">
       <div className="absolute left-0 bottom-0 w-[600px] h-[600px] bg-brand/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="max-w-[1280px] mx-auto px-4 md:px-6">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-6">
         <SectionHeader label="📋 QUICK ACCESS" heading="Latest Notifications" showViewAll viewAllHref="#" />
 
         {/* Two-column main + sidebar */}

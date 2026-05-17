@@ -56,7 +56,7 @@ export function StatisticsBar() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[200%] bg-brand/10 blur-[120px] pointer-events-none" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30 pointer-events-none" />
       
-      <div className="max-w-[1280px] mx-auto px-4 md:px-6 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-4">
           {stats.map((stat, i) => (
             <div key={i} className="relative">

@@ -25,7 +25,7 @@ const departmentIcons: Record<
 export function TrendingJobCards() {
   return (
     <section className="py-12 md:py-16 bg-slate-50/30 relative">
-      <div className="max-w-[1280px] mx-auto px-4 md:px-6 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-6 relative z-10">
         <SectionHeader
           label="🔥 TRENDING NOW"
           heading="Featured Job Alerts"

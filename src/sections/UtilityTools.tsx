@@ -73,7 +73,7 @@ export function UtilityTools() {
       className="py-12 md:py-16 relative bg-slate-50/80 border-t border-slate-200/50 overflow-hidden"
     >
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-brand/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="max-w-[1280px] mx-auto px-4 md:px-6 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-6 relative z-10">
         <SectionHeader label="🛠️ TOOLS & DOCUMENTS" heading="Useful Tools" />
 
         <div className="grid">

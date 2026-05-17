@@ -60,7 +60,7 @@ export function EducationLevelPage({ slug }: EducationLevelPageProps) {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand/10 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/3" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[100px] pointer-events-none translate-y-1/2 -translate-x-1/3" />
 
-        <div className="max-w-[1280px] mx-auto px-4 md:px-6 relative z-10">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-6 relative z-10">
           <FadeIn>
             <nav className="flex items-center gap-2 text-sm text-slate-custom mb-4">
               <Link href="/" className="hover:text-white transition-colors">
@@ -115,7 +115,7 @@ export function EducationLevelPage({ slug }: EducationLevelPageProps) {
         <div className="absolute top-40 left-10 w-72 h-72 bg-brand/5 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute bottom-40 right-10 w-96 h-96 bg-blue-500/5 rounded-full blur-[120px] pointer-events-none" />
 
-        <div className="max-w-[1280px] mx-auto px-4 md:px-6 relative z-10">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-6 relative z-10">
           <SectionHeader label="📋 LISTINGS" heading={`${level.label} Jobs`} />
 
           <div className="flex flex-col lg:flex-row gap-6">
@@ -267,23 +267,23 @@ export function EducationLevelPage({ slug }: EducationLevelPageProps) {
                   </h4>
                   <ul className="space-y-1 relative z-10">
                     {[
-                      "Latest Notifications",
-                      "Admit Card",
-                      "Results",
-                      "Syllabus",
-                      "Answer Key",
-                      "Sarkari Result",
+                      { label: "Latest Jobs", href: "/current-job" },
+                      { label: "Admit Card", href: "/admit-card" },
+                      { label: "Results", href: "/results" },
+                      { label: "Syllabus", href: "/syllabus" },
+                      { label: "Answer Key", href: "/answer-key" },
+                      { label: "Sarkari Result", href: "/" },
                     ].map((link) => (
-                      <li key={link}>
-                        <a
-                          href="#"
+                      <li key={link.label}>
+                        <Link
+                          href={link.href}
                           className="flex items-center justify-between px-3 py-2.5 -mx-3 rounded-xl hover:bg-brand/5 border border-transparent hover:border-brand/10 group/link transition-all duration-200"
                         >
                           <span className="text-[13px] font-medium text-slate-600 group-hover/link:text-brand transition-colors duration-200">
-                            {link}
+                            {link.label}
                           </span>
                           <ChevronRight className="w-3.5 h-3.5 text-slate-300 group-hover/link:text-brand group-hover/link:translate-x-1 transition-all duration-300" />
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>

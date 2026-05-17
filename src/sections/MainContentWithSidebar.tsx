@@ -33,7 +33,7 @@ export function MainContentWithSidebar() {
         <div className="absolute left-0 bottom-0 w-[600px] h-[600px] bg-brand/5 rounded-full blur-[120px]" />
       </div>
 
-      <div className="max-w-[1280px] mx-auto px-4 md:px-6 py-12 md:py-16 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-20 py-12 md:py-16 relative z-10">
         <div className="flex flex-col lg:flex-row gap-6">
           {/* ── Main Content ── */}
           <div className="flex-1 min-w-0 space-y-10">

@@ -32,7 +32,6 @@ interface PostDetailPageProps {
 export function PostDetailPage({ slug }: PostDetailPageProps) {
   const post = postDetails[slug];
 
-
   return (
     <div className="min-h-screen pt-16 bg-off-white overflow-hidden relative">
       {/* Page Background Mesh */}
@@ -45,7 +44,7 @@ export function PostDetailPage({ slug }: PostDetailPageProps) {
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand/15 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/4" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px] pointer-events-none translate-y-1/3 -translate-x-1/4" />
 
-        <div className="max-w-[1280px] mx-auto px-4 md:px-6 relative z-10">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-6 relative z-10">
           {/* Breadcrumb & Top Actions */}
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 pb-4 border-b border-white/10">
             <FadeIn>
@@ -55,7 +54,7 @@ export function PostDetailPage({ slug }: PostDetailPageProps) {
                 </Link>
                 <ChevronRight className="w-3.5 h-3.5" />
                 <Link
-                  href={`/category/${post.category}`}
+                  href={`/${post.category}`}
                   className="hover:text-white transition-colors capitalize"
                 >
                   {post.category.replace("-", " ")}
@@ -124,7 +123,7 @@ export function PostDetailPage({ slug }: PostDetailPageProps) {
 
       {/* Main Content Area */}
       <section className="py-6 md:py-8 -mt-6 relative z-20">
-        <div className="max-w-[1280px] mx-auto px-4 md:px-6">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-6">
           <div className="flex flex-col lg:flex-row gap-6">
             {/* Left Column */}
             <div className="flex-1 lg:w-[70%] space-y-6">

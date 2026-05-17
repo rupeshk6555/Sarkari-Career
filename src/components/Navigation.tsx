@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect, useCallback } from "react";
 import {
   Search,
   Menu,
@@ -87,24 +87,36 @@ const navLinks: NavLink[] = [
     ],
   },
   { label: "Answer Key", href: "/answer-key", icon: Key },
-  { label: "Documents", href: "/#documents", icon: FileCheck },
 ];
 
 export function Navigation() {
+  const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  // When user clicks a nav link on the home page, the nav is bg-transparent.
+  // The new page's outer wrapper (bg-off-white) briefly shows through that
+  // transparency, creating the "white flash". We track a leaving state so we
+  // can force the nav to bg-navy IMMEDIATELY on click — before React even
+  // processes the route change.
+  const [leavingHome, setLeavingHome] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => setScrolled(window.scrollY > 50);
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
+  // Fires synchronously before paint on every route change.
+  // Resets transient navigation state so the new page always starts clean.
+  useLayoutEffect(() => {
     setMobileOpen(false);
     setOpenDropdown(null);
+    setScrolled(false);
+    setLeavingHome(false); // new page is loaded, clear the transition flag
   }, [pathname]);
 
   useEffect(() => {
@@ -114,22 +126,39 @@ export function Navigation() {
     };
   }, [mobileOpen]);
 
-  const isHomePage = pathname === "/";
+  // Called synchronously when ANY nav link is clicked.
+  // Setting leavingHome=true instantly removes bg-transparent, so the
+  // new page's white background can never show through the nav.
+  const handleLinkClick = useCallback(() => {
+    setLeavingHome(true);
+    setScrolled(false);
+  }, []);
+
+  // isHomePage is only true when we're confirmed on "/" AND not mid-transition.
+  const isHomePage = pathname === "/" && !leavingHome;
+
+  if (!mounted) {
+    return <nav className="fixed top-0 left-0 right-0 z-50 h-16 bg-navy" />;
+  }
 
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md border-b ${
           scrolled
-            ? "bg-white/85 shadow-sm border-b border-slate-200/50"
+            ? "bg-white/85 shadow-sm border-slate-200/50"
             : isHomePage
-              ? "bg-transparent border-b border-transparent"
-              : "bg-navy"
+              ? "bg-transparent border-transparent"
+              : "bg-navy border-navy"
         }`}
       >
-        <div className="max-w-[1280px] mx-auto px-4 md:px-6">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-6">
           <div className="flex items-center justify-between h-16">
-            <Link href="/" className="flex items-center gap-2">
+            <Link
+              href="/"
+              className="flex items-center gap-2"
+              onClick={handleLinkClick}
+            >
               <div className="w-8 h-8 rounded-md bg-brand flex items-center justify-center font-bold text-sm text-white">
                 SCH
               </div>
@@ -166,6 +195,7 @@ export function Navigation() {
                   ) : (
                     <Link
                       href={link.href}
+                      onClick={handleLinkClick}
                       className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${
                         scrolled
                           ? "text-slate-700 hover:text-brand"
@@ -183,6 +213,7 @@ export function Navigation() {
                           <Link
                             key={item.label}
                             href={item.href}
+                            onClick={handleLinkClick}
                             className="flex items-center gap-2 px-4 py-2.5 text-sm text-dark-text hover:bg-brand-light hover:text-brand transition-colors duration-150"
                           >
                             {item.icon && (
@@ -260,6 +291,7 @@ export function Navigation() {
                             <Link
                               key={item.label}
                               href={item.href}
+                              onClick={handleLinkClick}
                               className="flex items-center gap-2 px-3 py-2 text-sm text-body-text rounded-md hover:bg-brand-light hover:text-brand"
                             >
                               {item.icon && (
@@ -274,6 +306,7 @@ export function Navigation() {
                   ) : (
                     <Link
                       href={link.href}
+                      onClick={handleLinkClick}
                       className="flex items-center gap-2 px-3 py-2.5 text-sm font-medium text-dark-text rounded-md hover:bg-light-gray"
                     >
                       <link.icon className="w-4 h-4 text-slate-custom" />

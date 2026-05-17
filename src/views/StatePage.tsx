@@ -38,7 +38,7 @@ export function StatePage({ stateName }: { stateName: string }) {
       {/* State Header */}
       <div className="bg-linear-to-r from-slate-900 to-slate-800 pt-16 pb-12 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-        <div className="max-w-[1280px] mx-auto px-4 md:px-6 relative z-10 text-center">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-6 relative z-10 text-center">
           <h1 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-4 leading-tight">
             <span className="text-transparent bg-clip-text bg-linear-to-r from-white to-slate-300">
               {formattedStateName}
@@ -55,7 +55,7 @@ export function StatePage({ stateName }: { stateName: string }) {
       </div>
 
       {/* Grid Layout identical to home page logic but arranged as requested */}
-      <div className="max-w-[1280px] mx-auto px-4 md:px-6 mt-8 relative z-20 space-y-8">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-6 mt-8 relative z-20 space-y-8">
         {/* Row 1: Admit Card, Result, Current Job */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           <JobListCard

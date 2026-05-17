@@ -57,21 +57,19 @@ export function GenericSectionPage({ title, jobs }: GenericSectionPageProps) {
       {/* Category Hero */}
       <section className="relative bg-navy py-12 md:py-20 overflow-hidden">
         {/* Background Glows */}
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand/15 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/4" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px] pointer-events-none translate-y-1/3 -translate-x-1/4" />
 
-        <div className="max-w-[1280px] mx-auto px-4 md:px-6 relative z-10">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-6 relative z-10">
           {/* Search Bar */}
           <FadeIn delay={0.1}>
             <div className="max-w-2xl mx-auto">
-              <div className="flex items-center bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-2xl h-14 px-2 group hover:bg-white/15 transition-all duration-300 focus-within:bg-white/20 focus-within:border-white/40 focus-within:ring-4 focus-within:ring-brand/30">
-                <Search className="w-5 h-5 text-white/70 ml-4 shrink-0 transition-colors group-focus-within:text-white" />
+              <div className="flex items-center bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-2xl h-12 sm:h-14 px-1.5 sm:px-2 group hover:bg-white/15 transition-all duration-300 focus-within:bg-white/20 focus-within:border-white/40 focus-within:ring-4 focus-within:ring-brand/30">
+                <Search className="w-4 h-4 sm:w-5 sm:h-5 text-white/70 ml-3 sm:ml-4 shrink-0 transition-colors group-focus-within:text-white" />
                 <input
                   type="text"
                   placeholder={`Search in ${title}...`}
-                  className="flex-1 px-3 text-sm text-white placeholder:text-white/50 outline-none bg-transparent"
+                  className="flex-1 min-w-0 px-2 sm:px-4 text-sm sm:text-base text-white placeholder:text-white/50 outline-none bg-transparent"
                 />
-                <button className="bg-brand hover:bg-brand-hover text-white font-medium text-sm px-5 py-2 rounded-full transition-colors">
+                <button className="bg-brand hover:bg-brand-hover text-white font-medium text-xs sm:text-sm px-4 sm:px-6 py-2 sm:py-2.5 rounded-full shadow-lg transition-all duration-300 shrink-0 hover:scale-105">
                   Search
                 </button>
               </div>
@@ -82,7 +80,7 @@ export function GenericSectionPage({ title, jobs }: GenericSectionPageProps) {
 
       {/* Main Content */}
       <section className="py-10 md:py-12 bg-off-white">
-        <div className="max-w-[1280px] mx-auto px-4 md:px-6">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-6">
           <div className="flex flex-col lg:flex-row gap-6">
             {/* Main Column */}
             <div className="flex-1 lg:w-[70%]">
@@ -202,7 +200,7 @@ export function GenericSectionPage({ title, jobs }: GenericSectionPageProps) {
                       return (
                         <li key={cat.slug}>
                           <Link
-                            href={`/category/${cat.slug}`}
+                            href={`/${cat.slug}`}
                             className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-[13px] font-semibold transition-all duration-300 border bg-white border-slate-100 text-slate-600 hover:border-brand/30 hover:shadow-sm hover:text-brand"
                           >
                             <cat.icon className="w-3.5 h-3.5 text-slate-400 group-hover:text-brand" />

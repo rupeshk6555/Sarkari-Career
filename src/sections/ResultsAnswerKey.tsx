@@ -6,7 +6,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 export function ResultsAnswerKey() {
   return (
     <section id="results" className="py-12 md:py-16 bg-white">
-      <div className="max-w-[1280px] mx-auto px-4 md:px-6">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-6">
         <SectionHeader
           label="📋 EXAM OUTCOMES"
           heading="Results & Answer Keys"

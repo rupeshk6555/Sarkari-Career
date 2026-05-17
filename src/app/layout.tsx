@@ -5,7 +5,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Sarkari Career Hub",
-  description: "Fast updates on government jobs, results, admit cards, syllabus, and education news.",
+  description:
+    "Fast updates on government jobs, results, admit cards, syllabus, and education news.",
 };
 
 export default function RootLayout({
@@ -14,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
       <body suppressHydrationWarning>
         <Navigation />
         <main>{children}</main>

@@ -1,19 +1,15 @@
 "use client";
 
 import Link from "next/link";
+import { Send, MapPin, Mail, ArrowRight, Download, Heart } from "lucide-react";
 import {
-  Send,
-  Phone,
-  Facebook,
-  Twitter,
-  Instagram,
-  Youtube,
-  MapPin,
-  Mail,
-  ArrowRight,
-  Download,
-  Heart,
-} from "lucide-react";
+  FaWhatsapp,
+  FaFacebookF,
+  FaXTwitter,
+  FaYoutube,
+  FaInstagram,
+  FaTelegram,
+} from "react-icons/fa6";
 
 const quickLinks = [
   { label: "Latest Jobs", href: "/categories" },
@@ -38,7 +34,7 @@ const jobCategories = [
 ];
 
 const resources = [
-  { label: "Documents", href: "/#documents" },
+ 
   { label: "Admissions", href: "/admission" },
   { label: "Important Links", href: "#" },
   { label: "Privacy Policy", href: "#" },
@@ -54,7 +50,7 @@ const importantLinks = [
 
 export function Footer() {
   return (
-    <footer className="relative bg-linear-to-b from-slate-900 via-slate-900 to-slate-950 overflow-hidden">
+    <footer className="relative bg-linear-to-b px-3 from-slate-900 via-slate-900 to-slate-950 overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-1" />
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand/10 rounded-full blur-[150px] -mr-64 -mt-64 pointer-events-none" />
@@ -63,12 +59,12 @@ export function Footer() {
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-size-[80px_80px] pointer-events-none" />
 
-      <div className="max-w-[1280px] mx-auto px-4 md:px-6 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-20 relative z-10">
         {/* Newsletter Section */}
         <div className="relative py-12 lg:py-16">
-          <div className="relative bg-linear-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 lg:p-12">
+          <div className="relative bg-linear-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 lg:p-12 overflow-hidden">
             {/* Decorative icon */}
-            <div className="absolute top-6 right-6 lg:top-8 lg:right-8 w-20 h-20 bg-brand/20 rounded-2xl flex items-center justify-center backdrop-blur-sm">
+            <div className="hidden sm:flex absolute top-6 right-6 lg:top-8 lg:right-8 w-20 h-20 bg-brand/20 rounded-2xl items-center justify-center backdrop-blur-sm">
               <Send className="w-10 h-10 text-brand" />
             </div>
 
@@ -153,46 +149,46 @@ export function Footer() {
               </div>
 
               {/* Social Links */}
-              <div className="flex items-center gap-3">
+              <div className="inline items-center gap-4">
                 <span className="text-xs text-slate-500 uppercase tracking-wider font-semibold mr-2">
                   Follow us
                 </span>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 pt-2">
                   <Link
                     href="#"
                     className="w-10 h-10 rounded-xl bg-white/5 hover:bg-[#0088CC] border border-white/10 hover:border-transparent flex items-center justify-center text-slate-400 hover:text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                   >
-                    <Send className="w-4 h-4" />
+                    <FaTelegram className="w-4 h-4" />
                   </Link>
                   <Link
                     href="#"
                     className="w-10 h-10 rounded-xl bg-white/5 hover:bg-[#25D366] border border-white/10 hover:border-transparent flex items-center justify-center text-slate-400 hover:text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                   >
-                    <Phone className="w-4 h-4" />
+                    <FaWhatsapp className="w-4 h-4" />
                   </Link>
                   <Link
                     href="#"
                     className="w-10 h-10 rounded-xl bg-white/5 hover:bg-[#1877F2] border border-white/10 hover:border-transparent flex items-center justify-center text-slate-400 hover:text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                   >
-                    <Facebook className="w-4 h-4" />
+                    <FaFacebookF className="w-4 h-4" />
                   </Link>
                   <Link
                     href="#"
-                    className="w-10 h-10 rounded-xl bg-white/5 hover:bg-[#1DA1F2] border border-white/10 hover:border-transparent flex items-center justify-center text-slate-400 hover:text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                    className="w-10 h-10 rounded-xl bg-white/5 hover:bg-[#000000] border border-white/10 hover:border-transparent flex items-center justify-center text-slate-400 hover:text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                   >
-                    <Twitter className="w-4 h-4" />
+                    <FaXTwitter className="w-4 h-4" />
                   </Link>
                   <Link
                     href="#"
                     className="w-10 h-10 rounded-xl bg-white/5 hover:bg-[#FF0000] border border-white/10 hover:border-transparent flex items-center justify-center text-slate-400 hover:text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                   >
-                    <Youtube className="w-4 h-4" />
+                    <FaYoutube className="w-4 h-4" />
                   </Link>
                   <Link
                     href="#"
                     className="w-10 h-10 rounded-xl bg-white/5 hover:bg-linear-to-br hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#F77729] border border-white/10 hover:border-transparent flex items-center justify-center text-slate-400 hover:text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                   >
-                    <Instagram className="w-4 h-4" />
+                    <FaInstagram className="w-4 h-4" />
                   </Link>
                 </div>
               </div>
